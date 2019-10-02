@@ -29,11 +29,11 @@ import "./ERC20Claimable.sol";
 import "./ERC20Draggable.sol";
 
 /**
- * @title Draggable ServiceHunter AG Shares
+ * @title Draggable XXX Shares
  * @author Benjamin Rickenbacher, benjamin@alethena.com
  * @author Luzius Meisser, luzius@meissereconomics.com
  *
- * This is an ERC-20 token representing shares of ServiceHunter AG that are bound to
+ * This is an ERC-20 token representing shares of XXX that are bound to
  * a shareholder agreement that can be found at the URL defined in the constant 'terms'.
  * The shareholder agreement is partially enforced through this smart contract. The agreement
  * is designed to facilitate a complete acquisition of the firm even if a minority of shareholders
@@ -52,11 +52,11 @@ import "./ERC20Draggable.sol";
  * to vote.
  */
 
-contract DraggableServiceHunterShares is ERC20Claimable, ERC20Draggable {
+contract DraggableAlethenaShares is ERC20Claimable, ERC20Draggable {
 
-    string public constant symbol = "DSHS";
-    string public constant name = "Draggable ServiceHunter AG Shares";
-    string public constant terms = "quitt.ch/ir";
+    string public constant symbol = "XXX";
+    string public constant name = "XXX";
+    string public constant terms = "XXX";
 
     uint8 public constant decimals = 0;                  // shares are not divisible
 

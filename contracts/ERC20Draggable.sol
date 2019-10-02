@@ -37,13 +37,13 @@ import "./IMigratable.sol";
  * @author Luzius Meisser, luzius@meissereconomics.com
  * @dev These tokens are based on the ERC20 standard and the open-zeppelin library.
  *
- * This is an ERC-20 token representing shares of ServiceHunter AG that are bound to
+ * This is an ERC-20 token representing shares that are bound to
  * a shareholder agreement that can be found at the URL defined in the constant 'terms'
- * of the 'DraggableServiceHunterShares' contract. The agreement is partially enforced
+ * of the 'DraggableAlethenaShares' contract. The agreement is partially enforced
  * through the Swiss legal system, and partially enforced through this smart contract.
  * In particular, this smart contract implements a drag-along clause which allows the
  * majority of token holders to force the minority sell their shares along with them in
- * case of an acquisition. That's why the tokens are called "Draggable ServiceHunter AG Shares."
+ * case of an acquisition.
  */
 
 contract ERC20Draggable is ERC20 {

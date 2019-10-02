@@ -1,8 +1,8 @@
-const EQUITY = artifacts.require('../contracts/ServiceHunterShares.sol');
+const EQUITY = artifacts.require('../contracts/AlethenaShares.sol');
 const XCHF = artifacts.require('../contracts/Testing/XCHF/CryptoFranc.sol');
 
 const DraggableShare = artifacts.require(
-  '../contracts/DraggableServiceHunterShares.sol'
+  '../contracts/DraggableAlethenaShares.sol'
 );
 
 const web3utils = require('web3-utils');

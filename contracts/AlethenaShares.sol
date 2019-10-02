@@ -30,7 +30,7 @@ import "./ERC20Claimable.sol";
 import "./Pausable.sol";
 
 /**
- * @title ServiceHunter AG Shares
+ * @title XXX Shares
  * @author Benjamin Rickenbacher, benjamin@alethena.com
  * @author Luzius Meisser, luzius@meissereconomics.com
  * @dev These tokens are based on the ERC20 standard and the open-zeppelin library.
@@ -54,17 +54,17 @@ import "./Pausable.sol";
  * Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
 
-contract ServiceHunterShares is ERC20Claimable, Pausable {
+contract AlethenaShares is ERC20Claimable, Pausable {
 
     using SafeMath for uint256;
 
-    string public constant symbol = "SHS";
-    string public constant name = "ServiceHunter AG Shares";
-    string public constant terms = "quitt.ch/ir";
+    string public constant symbol = "XXX";
+    string public constant name = "XXX";
+    string public constant terms = "XXX";
 
     uint8 public constant decimals = 0; // legally, shares are not divisible
 
-    uint256 public totalShares = 17000; // total number of shares, maybe not all tokenized
+    uint256 public totalShares = XXX; // total number of shares, maybe not all tokenized
     uint256 public invalidTokens = 0;
 
     address[] public subregisters;
