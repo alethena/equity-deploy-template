@@ -60,7 +60,7 @@ contract AlethenaShares is ERC20Claimable, Pausable {
 
     string public constant symbol = "GCO";
     string public constant name = "Green Consensus SA Shares";
-    string public constant terms = "XXX";
+    string public constant terms = "greenconsensus.ch/terms";
 
     uint8 public constant decimals = 0; // legally, shares are not divisible
 

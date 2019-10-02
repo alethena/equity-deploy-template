@@ -56,7 +56,7 @@ contract DraggableAlethenaShares is ERC20Claimable, ERC20Draggable {
 
     string public constant symbol = "DGCO";
     string public constant name = "Draggable Green Consensus SA Shares";
-    string public constant terms = "XXX";
+    string public constant terms = "greenconsensus.ch/terms";
 
     uint8 public constant decimals = 0;                  // shares are not divisible
 
