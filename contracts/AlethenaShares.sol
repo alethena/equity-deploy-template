@@ -30,7 +30,7 @@ import "./ERC20Claimable.sol";
 import "./Pausable.sol";
 
 /**
- * @title XXX Shares
+ * @title Green Consensus SA Shares
  * @author Benjamin Rickenbacher, benjamin@alethena.com
  * @author Luzius Meisser, luzius@meissereconomics.com
  * @dev These tokens are based on the ERC20 standard and the open-zeppelin library.
@@ -58,13 +58,13 @@ contract AlethenaShares is ERC20Claimable, Pausable {
 
     using SafeMath for uint256;
 
-    string public constant symbol = "XXX";
-    string public constant name = "XXX";
+    string public constant symbol = "GCO";
+    string public constant name = "Green Consensus SA Shares";
     string public constant terms = "XXX";
 
     uint8 public constant decimals = 0; // legally, shares are not divisible
 
-    uint256 public totalShares = XXX; // total number of shares, maybe not all tokenized
+    uint256 public totalShares = 10 * 10 ** 6; // total number of shares, maybe not all tokenized
     uint256 public invalidTokens = 0;
 
     address[] public subregisters;
