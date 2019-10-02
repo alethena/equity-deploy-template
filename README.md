@@ -39,9 +39,9 @@ For this contract, the following adjustments have been made:
 The `ERC20Draggable` contract contains all the functionality related to the drag-along clause. In the following we describe the standard process of issuing equity bound to a shareholder agreement followed by a drag-along at some point.
 
 ### Issuance:
-1. The ERC20 equity contract `ServiceHunterShares` is deployed with the desired parameters. This contract supports claims as it inherits from `ERC20Claimable`. A currency token such as XCHF can be set as a custom collateral. The company is the owner of this contract.
+1. The ERC20 equity contract `AlethenaShares` is deployed with the desired parameters. This contract supports claims as it inherits from `ERC20Claimable`. A currency token such as XCHF can be set as a custom collateral. The company is the owner of this contract.
 2. Share tokens are minted but not distributed to the shareholders.
-3. The ERC20 draggable contract `DraggableServiceHunterShares` is deployed. This contract does not have an owner and could in principle be deployed by anyone.
+3. The ERC20 draggable contract `DraggableAlethenaShares` is deployed. This contract does not have an owner and could in principle be deployed by anyone.
 4. Using the function `wrap` the share tokens are swapped for draggable shares. Now the draggable contract itself holds the actual shares.
 5. The newly created drag-along tokens are distributed to the shareholders.
 6. The share registry listens to the transfer events from both ERC20 contracts and by matching events with a mapping table of addresses and users generates the shareholder transactions for the registry.
@@ -60,8 +60,8 @@ The `ERC20Draggable` contract contains all the functionality related to the drag
 
 ## 5. Contract Structure
 We have the following dependencies:
-- `DraggableServiceHunterShares` is `ERC20Claimable` and `ERC20Draggable`
-- `ServiceHunterShares` is `ERC20Claimable` and `Pausable`
+- `DraggableAlethenaShares` is `ERC20Claimable` and `ERC20Draggable`
+- `AlethenaShares` is `ERC20Claimable` and `Pausable`
 
 ## 6. ChainSecurity Audit Report
 We engaged ChainSecurity to perform a security audit on the full drag-along smart contract system. We have addressed all the reported issues and, in particular, all major security and design issues have been eliminated with appropriate code fixes. The final report has been added to this GitHub repository with the name `ChainSecurity_Audit_Report_Alethena`.

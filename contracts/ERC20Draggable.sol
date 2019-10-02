@@ -43,7 +43,7 @@ import "./IMigratable.sol";
  * through the Swiss legal system, and partially enforced through this smart contract.
  * In particular, this smart contract implements a drag-along clause which allows the
  * majority of token holders to force the minority sell their shares along with them in
- * case of an acquisition. That's why the tokens are called "Draggable ServiceHunter AG Shares."
+ * case of an acquisition.
  */
 
 contract ERC20Draggable is ERC20 {
