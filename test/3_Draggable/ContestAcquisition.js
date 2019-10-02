@@ -1,8 +1,8 @@
-const EQUITY = artifacts.require('../contracts/ServiceHunterShares.sol');
+const EQUITY = artifacts.require('../contracts/AlethenaShares.sol');
 const XCHF = artifacts.require('../contracts/Testing/XCHF/CryptoFranc.sol');
 
 const DraggableShare = artifacts.require(
-  '../contracts/DraggableServiceHunterShares.sol'
+  '../contracts/DraggableAlethenaShares.sol'
 );
 
 
@@ -66,7 +66,7 @@ contract('Draggable - Contest Acquisition', accounts => {
       Draggable.wrap(Tokenholder4, 500, { from: Shareholder1 })
     ]);
 
-    // Shareholder1 gives XCHF allowance to draggable contract...
+    // Shareholder1 gives XCHF allowance to draggable contract...
     await XCHFInstance.approve(Draggable.address, XCHFMintAmount, {
       from: Shareholder1
     });
@@ -80,9 +80,9 @@ contract('Draggable - Contest Acquisition', accounts => {
 
     // The quorum is reached
     await Promise.all([
-      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
-      Draggable.voteYes({ from: Tokenholder1 }), // 1000 votes
-      Draggable.voteNo({ from: Tokenholder2 }), // 1000 votes
+      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
+      Draggable.voteYes({ from: Tokenholder1 }), // 1000 votes
+      Draggable.voteNo({ from: Tokenholder2 }), // 1000 votes
       Draggable.voteNo({ from: Tokenholder3 }), //500 votes
       Draggable.voteYes({ from: Tokenholder4 }) //500 votes
     ]);
@@ -104,9 +104,9 @@ contract('Draggable - Contest Acquisition', accounts => {
 
     // The quorum fails
     await Promise.all([
-      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
-      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
-      Draggable.voteNo({ from: Tokenholder2 }), // 1000 votes
+      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
+      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
+      Draggable.voteNo({ from: Tokenholder2 }), // 1000 votes
       Draggable.voteNo({ from: Tokenholder3 }), //500 votes
       Draggable.voteNo({ from: Tokenholder4 }) //500 votes
     ]);
@@ -114,7 +114,7 @@ contract('Draggable - Contest Acquisition', accounts => {
     // Offer can be killed
     const tx = await Draggable.contestAcquisition();
     const offerExists = await Draggable.offerExists();
-    checkEvents(offerExists, tx, 'Not enough support.');
+    checkEvents(offerExists, tx, 'Not enough support');
   });
 
   it('Contest works if relative quorum has failed', async () => {
@@ -125,9 +125,9 @@ contract('Draggable - Contest Acquisition', accounts => {
 
     // The absolute quorum fails
     await Promise.all([
-      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
-      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
-      Draggable.voteNo({ from: Tokenholder2 }) // 1000 votes
+      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
+      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
+      Draggable.voteNo({ from: Tokenholder2 }) // 1000 votes
     ]);
 
     // Can't kill yet
@@ -142,7 +142,7 @@ contract('Draggable - Contest Acquisition', accounts => {
     // Offer can now be killed
     const tx = await Draggable.contestAcquisition();
     const offerExists = await Draggable.offerExists();
-    checkEvents(offerExists, tx, 'Not enough support.');
+    checkEvents(offerExists, tx, 'Not enough support');
   });
 
   it('Contest works if funding insufficient (balance)', async () => {
@@ -153,9 +153,9 @@ contract('Draggable - Contest Acquisition', accounts => {
 
     // The absolute quorum is reached
     await Promise.all([
-      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
-      Draggable.voteYes({ from: Tokenholder1 }), // 1000 votes
-      Draggable.voteYes({ from: Tokenholder2 }), // 1000 votes
+      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
+      Draggable.voteYes({ from: Tokenholder1 }), // 1000 votes
+      Draggable.voteYes({ from: Tokenholder2 }), // 1000 votes
       Draggable.voteNo({ from: Tokenholder3 }), //500 votes
       Draggable.voteNo({ from: Tokenholder4 }) //500 votes
     ]);
@@ -166,7 +166,7 @@ contract('Draggable - Contest Acquisition', accounts => {
     // Offer can be killed
     const tx = await Draggable.contestAcquisition();
     const offerExists = await Draggable.offerExists();
-    checkEvents(offerExists, tx, 'Offer was not sufficiently funded.');
+    checkEvents(offerExists, tx, 'Offer was not sufficiently funded');
   });
 
   it('Contest works if funding insufficient (allowance)', async () => {
@@ -177,9 +177,9 @@ contract('Draggable - Contest Acquisition', accounts => {
 
     // The absolute quorum is reached
     await Promise.all([
-      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
-      Draggable.voteYes({ from: Tokenholder1 }), // 1000 votes
-      Draggable.voteYes({ from: Tokenholder2 }), // 1000 votes
+      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
+      Draggable.voteYes({ from: Tokenholder1 }), // 1000 votes
+      Draggable.voteYes({ from: Tokenholder2 }), // 1000 votes
       Draggable.voteNo({ from: Tokenholder3 }), //500 votes
       Draggable.voteNo({ from: Tokenholder4 }) //500 votes
     ]);
@@ -189,7 +189,7 @@ contract('Draggable - Contest Acquisition', accounts => {
     // Offer can be killed
     const tx = await Draggable.contestAcquisition();
     const offerExists = await Draggable.offerExists();
-    checkEvents(offerExists, tx, 'Offer was not sufficiently funded.');
+    checkEvents(offerExists, tx, 'Offer was not sufficiently funded');
   });
 
   it("NEG - Can't contest a good offer (before vote ended)", async () => {
@@ -200,9 +200,9 @@ contract('Draggable - Contest Acquisition', accounts => {
 
     // The absolute quorum fails
     await Promise.all([
-      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
-      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
-      Draggable.voteNo({ from: Tokenholder2 }) // 1000 votes
+      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
+      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
+      Draggable.voteNo({ from: Tokenholder2 }) // 1000 votes
     ]);
 
     // Killing fails because voting is still in progress
@@ -224,8 +224,8 @@ contract('Draggable - Contest Acquisition', accounts => {
 
     // The absolute quorum fails
     await Promise.all([
-      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
-      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
+      Draggable.voteYes({ from: Shareholder1 }), // 5000 votes
+      Draggable.voteNo({ from: Tokenholder1 }), // 1000 votes
     ]);
 
     // Killing fails because vote is still open
