@@ -29,11 +29,11 @@ import "./ERC20Claimable.sol";
 import "./ERC20Draggable.sol";
 
 /**
- * @title Draggable XXX Shares
+ * @title Draggable LEXR Shares
  * @author Benjamin Rickenbacher, benjamin@alethena.com
  * @author Luzius Meisser, luzius@meissereconomics.com
  *
- * This is an ERC-20 token representing shares of XXX that are bound to
+ * This is an ERC-20 token representing shares of LEXR that are bound to
  * a shareholder agreement that can be found at the URL defined in the constant 'terms'.
  * The shareholder agreement is partially enforced through this smart contract. The agreement
  * is designed to facilitate a complete acquisition of the firm even if a minority of shareholders
@@ -54,9 +54,9 @@ import "./ERC20Draggable.sol";
 
 contract DraggableAlethenaShares is ERC20Claimable, ERC20Draggable {
 
-    string public constant symbol = "XXX";
-    string public constant name = "XXX";
-    string public constant terms = "XXX";
+    string public constant symbol = "LXD";
+    string public constant name = "LEXR Draggable Equity";
+    string public constant terms = "shares.lexr.ch";
 
     uint8 public constant decimals = 0;                  // shares are not divisible
 

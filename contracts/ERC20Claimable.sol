@@ -64,7 +64,7 @@ contract ERC20Claimable is ERC20 {
         uint256 timestamp;  // the timestamp of the block in which the preclaim was made
     }
 
-    uint256 public claimPeriod = XXX days; // Default of 180 days;
+    uint256 public claimPeriod = 180 days; // Default of 180 days;
     uint256 public preClaimPeriod = 1 days; // One day. Minimum waiting period between preClaim and Claim;
     uint256 public preClaimPeriodEnd = 2 days; // Two days. Maximum waiting period between preClaim and Claim;
 
