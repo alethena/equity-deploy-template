@@ -34,12 +34,13 @@ module.exports = {
       port: 8545,
       network_id: 4, // Match any network id
       from: '0x1c9c829000aae7baba42578673d52d9a7801665d',
-      gasPrice: 30 ** 10 **9
+      gasPrice: 30 * 10 **9
     }, 
     production : {
-      host: '169.62.164.45',
+      host: '169.62.164.38',
       port: 8545,
       network_id: 1, // Match any network id,
+      from: '0x529cf557e8650ffe58018ada5e190a7ef7a6b60b',
       gasPrice: 30 * 10 ** 9
     }
   }
